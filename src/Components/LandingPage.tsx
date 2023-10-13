@@ -27,7 +27,7 @@ function LandingPage() {
       <div className="w-1/6 h-screen">
         <Navbar />
       </div>
-      <div className="w-7/12 bg-mainsection">
+      <div className="w-7/12 bg-mainsection ">
         <MainSection profiles={profiles} />
       </div>
       <div className="w-1/4 bg-mainsection">

@@ -25,7 +25,7 @@ function Navbar() {
       <div className="nav-one mt-8 mb-10 border-b border-gray-200">
         <div className="nav-three flex mb-4 items-center  cursor-pointer">
           <FontAwesomeIcon icon={faHouse} className="text-secondary"/>
-          <p className="ml-4 text-secondary">Discover</p>
+          <p className="ml-4 text-secondary font-semibold">Discover</p>
         </div>
         <div className="nav-three flex mb-4 items-center  cursor-pointer">
           <FontAwesomeIcon icon={faPeopleArrows} className="text-texts" />

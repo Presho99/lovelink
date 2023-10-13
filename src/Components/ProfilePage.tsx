@@ -1,5 +1,5 @@
 import React from 'react'
-import profiles from '../data/dataProfiles.json'
+
 
 function ProfilePage() {
   return (
