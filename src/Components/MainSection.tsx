@@ -1,5 +1,8 @@
 import React from "react";
 import { Profile } from "../types/types";
+import "../styles/custom-styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 interface MainSectionProps {
   profiles: Profile[];
@@ -13,8 +16,8 @@ function MainSection({ profiles }: MainSectionProps) {
   }
 
   return (
-    <div className="p-6 h-full">
-      <div className="flex h-1/8">
+    <div className="p-6 h-screen">
+      <div className="flex ">
         {/* search bar */}
         <div className="ui search w-4/5">
           <input
@@ -30,16 +33,32 @@ function MainSection({ profiles }: MainSectionProps) {
       </div>
 
       {/* profiles */}
-      <div className="flex h-4/5 mt-6 bg-red-400 flex-wrap justify-center ">
+      <div className="flex h-full mt-6  flex-wrap justify-center  overflow-auto ">
         {profiles.map((person) => (
           <div
             key={person.id}
-            className="w-60 h-60 m-2 relative rounded-md p-2"
-            style={{ backgroundImage: `url(${person.avatar})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
+            className="w-60 h-72 m-2 relative  p-2 fixed inset-0 card-radius"
+            style={{
+              backgroundImage: `url(${person.avatar})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
           >
-            <div className="absolute">
-              <h2>{person.name}</h2>
-              <p>{person.bio}</p>
+            <div className="absolute inset-0 bg-black opacity-20 card-radius"></div>
+            <div className="absolute z-10 text-white flex w-full bottom-4 items-center">
+              <div className="">
+                <h2 className="font-semibold text-xl text-lighttext ">
+                  {person.name},{" "}
+                </h2>
+                <p className="text-lighttext">{person.age}</p>
+              </div>
+
+              <div className="absolute right-5">
+                <button className="bg-secondary p-2 rounded-full flex justify-center items-center">
+                  <FontAwesomeIcon icon={faEye} className="text-xl text-lighttext"/>
+                </button>
+              </div>
             </div>
           </div>
         ))}
