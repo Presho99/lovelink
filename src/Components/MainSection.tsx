@@ -30,7 +30,7 @@ function MainSection({ profiles }: MainSectionProps) {
         </button>
       </div>
          
-       <div className="ui three cards">
+       <div className="ui three cards flex h-full mt-6  flex-wrap justify-center  overflow-auto ">
           {[...Array(12)].map((_, index) => (
             <div key={index} className="ui card">
               <div className="content">
