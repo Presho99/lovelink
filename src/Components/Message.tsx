@@ -4,6 +4,7 @@ import React from "react";
 import { Profile } from "../types/types";
 import FollowButton from "./FollowButton";
 import '../styles/custom-styles.css'
+import ProfileViews from "./ProfileViews";
 
 
 function shuffleArray(array: Profile[]) {
@@ -86,8 +87,7 @@ function Message({ profiles }: MessageProps) {
 
       {/* Profile views */}
       <div className="flex flex-col">
-          <h3>Profile views</h3>
-          <div></div>
+         <ProfileViews/>
       </div>
     </div>
   );
