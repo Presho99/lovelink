@@ -11,8 +11,40 @@ interface MainSectionProps {
 function MainSection({ profiles }: MainSectionProps) {
   console.log(profiles);
 
-  if (!Array.isArray(profiles)) {
-    return <div>No profiles available.</div>;
+  if (!Array.isArray(profiles) || profiles.length === 0) {
+    return (
+      <div className="p-6 h-screen">
+        
+        <div className="flex mb-8">
+        {/* search bar */}
+        <div className="ui search w-4/5">
+          <input
+            className="prompt"
+            type="text"
+            placeholder="Search username..."
+          />
+        </div>
+        {/* upgrade button */}
+        <button className="w-1/5 bg-secondary rounded-full text-white">
+          Upgrade Now
+        </button>
+      </div>
+         
+       <div className="ui three cards">
+          {[...Array(12)].map((_, index) => (
+            <div key={index} className="ui card">
+              <div className="content">
+                <div className="ui placeholder">
+                  <div className="square image"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+    
+      </div>
+    );
+  
   }
 
   return (

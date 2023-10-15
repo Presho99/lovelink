@@ -7,9 +7,6 @@ import Message from "./Message";
 import MessageIcons from "./MessageIcons";
 import {Profile} from '../types/types'
 
-
-
-
 function LandingPage() {
   const [profiles, setProfiles] = useState<Profile[]>([]);
 
@@ -31,7 +28,7 @@ function LandingPage() {
         <MainSection profiles={profiles} />
       </div>
       <div className="w-1/4 bg-mainsection">
-        <Message profiles={profiles}/>
+      <Message profiles={profiles}/>
       </div>
     </div>
   );
